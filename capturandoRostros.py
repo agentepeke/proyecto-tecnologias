@@ -2,16 +2,16 @@ import cv2
 import os
 import imutils
 
-personName = 'Gaby'
-dataPath = 'ruta de la carpeta data' #Cambia a la ruta donde hayas almacenado Data
+personName = 'Marco'
+dataPath = 'C:/Users/agent/Documents/proyectoRF/Data' #Cambia a la ruta donde hayas almacenado Data
 personPath = dataPath + '/' + personName
 
 if not os.path.exists(personPath):
 	print('Carpeta creada: ',personPath)
 	os.makedirs(personPath)
 
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-#cap = cv2.VideoCapture('Video.mp4')
+#cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture("C:/Users/agent/Documents/proyectoRF/videomarco.mp4")
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 count = 0
@@ -37,6 +37,6 @@ while True:
 	k =  cv2.waitKey(1)
 	if k == 27 or count >= 300:
 		break
-
+print('Si llego aqui')
 cap.release()
 cv2.destroyAllWindows()
