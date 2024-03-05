@@ -39,5 +39,5 @@ face_recognizer.train(facesData, np.array(labels))
 # Almacenando el modelo obtenido
 #face_recognizer.write('modeloEigenFace.xml')
 #face_recognizer.write('modeloFisherFace.xml')
-face_recognizer.write('modeloLBPHFace.xml')
+face_recognizer.write('modeloLBPHFaceU.xml')
 print("Modelo almacenado...")
