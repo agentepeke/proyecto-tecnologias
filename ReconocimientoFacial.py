@@ -1,7 +1,8 @@
 import cv2
 import os
 
-dataPath = 'C:/Users/agent/Documents/proyectoRF/Data'  # Cambia a la ruta donde hayas almacenado Data
+filesPath = os.environ['USERPROFILE'] + '/Documents/proyectoRF'
+dataPath = filesPath + '/Data' #Cambia a la ruta donde hayas almacenado Data #Cambia a la ruta donde hayas almacenado Data
 imagePaths = os.listdir(dataPath)
 print('imagePaths=', imagePaths)
 

@@ -2,7 +2,8 @@ import cv2
 import os
 import numpy as np
 
-dataPath = 'C:/Users/agent/Documents/proyectoRF/Data' #Cambia a la ruta donde hayas almacenado Data
+filesPath = os.environ['USERPROFILE'] + '/Documents/proyectoRF'
+dataPath = filesPath + '/Data' #Cambia a la ruta donde hayas almacenado Data #Cambia a la ruta donde hayas almacenado Data
 peopleList = os.listdir(dataPath)
 print('Lista de personas: ', peopleList)
 

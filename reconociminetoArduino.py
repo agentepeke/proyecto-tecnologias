@@ -7,7 +7,8 @@ import time
 arduino = serial.Serial('COM5', 9600)  # Reemplaza 'COMX' con el puerto serial correcto
 time.sleep(2)  # Espera a que Arduino inicialice
 
-dataPath = 'C:/Users/agent/Documents/proyectoRF/Data'
+filesPath = os.environ['USERPROFILE'] + '/Documents/proyectoRF'
+dataPath = filesPath + '/Data' #Cambia a la ruta donde hayas almacenado Data
 imagePaths = os.listdir(dataPath)
 
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()

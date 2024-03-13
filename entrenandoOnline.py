@@ -1,16 +1,21 @@
+from urllib.parse import quote_plus
 import cv2
 import os
 import numpy as np
 from pymongo import MongoClient
 import pickle
+from dotenv import load_dotenv
+
+from conexionMongo import get_client
 
 # Conexión a la base de datos en la nube
-mongodb_password = "pekecito"  # Contraseña de MongoDB Atlas
-client = MongoClient(f"mongodb+srv://agentepeke:{mongodb_password}@cerradura.pymvanq.mongodb.net/?retryWrites=true&w=majority&appName=cerradura")
+ # Contraseña de MongoDB Atlas
+client = get_client()
 db = client.cerradura
 collection = db.face_models
 
-dataPath = 'C:/Users/agent/Documents/proyectoRF/Data'
+filesPath = os.environ['USERPROFILE'] + '/Documents/proyectoRF'
+dataPath = filesPath + '/Data' #Cambia a la ruta donde hayas almacenado Data
 peopleList = os.listdir(dataPath)
 
 labels = []
